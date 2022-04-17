@@ -43,18 +43,18 @@
     
       socket.on('chat message', function({username, message}) {
         var item = document.createElement('li');
-        if(username == "VapWasTaken") {
-          item.textContent = `[Creator] buddy#1234 (@${username}) - ${message}`;
+        if(username == "benjibogush") {
+          item.textContent = `[Admin] buddy#1234 (@${username}) - ${message}`;
           item.className = "rainbowText"
         } else {
           item.textContent = `@${username} - ${message}`;
         }
-        if(username == "DaInfLoop") {
-          item.textContent = `[roblox addict] @${username} - ${message}`;
-          // item.className = "rainbowText"
-        } else {
-          item.textContent = `@${username} - ${message}`;
-        }
+        // if(username == "benjibogush") {
+        //   item.textContent = `[roblox addict] @${username} - ${message}`;
+        //   // item.className = "rainbowText"
+        // } else {
+        //   item.textContent = `@${username} - ${message}`;
+        // }
         // item.textContent = `@${username} - ${message}`;
         messages.appendChild(item);
         window.scrollTo(0, document.body.scrollHeight);

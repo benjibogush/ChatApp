@@ -4,12 +4,12 @@ const http = require('http');
 const server = http.createServer(app);
 const { Server } = require("socket.io");
 const io = new Server(server);
-const db = new (require("@replit/database"));
+const db = new (require("@replit/database")); //https://www.npmjs.com/package/@replit/database
 
 let messages = []
 
 db.list().then(keys => {
-  if (!keys.includes('admins')) db.set('admins', '["DaInfLoop", "VapWasTaken", "CosmicBear"]')
+  if (!keys.includes('admins')) db.set('admins', '[ "benjibogush" ]')
   if (!keys.includes('messages')) db.set('messages', "[]")
   if (!keys.includes('bannedUsers')) db.set('bannedUsers', "[]")
   if (!keys.includes('announcement')) db.set('announcement', "welcome to replchat!")  
@@ -175,26 +175,26 @@ function connection(socket) {
     db.set('messages', JSON.stringify(messages))
   });
   socket.on('admin.refreshall', () => {
-    if(!["VapWasTaken", "DaInfLoop", "CosmicBear"].includes(socket.name)) return;
+    if(!["benjibogush", "benjibogush", "benjibogush"].includes(socket.name)) return;
     io.emit('admin.refreshall', {});
   })
   socket.on('admin.clearMessages', () => {
-    if(!["VapWasTaken", "DaInfLoop", "CosmicBear"].includes(socket.name)) return;
+    if(!["benjibogush", "benjibogush", "benjibogush"].includes(socket.name)) return;
     db.set('messages', "[]");
     messages.length = []
     io.emit('admin.refreshall', {})
   })
   socket.on('admin.filter', () => {
-    if(!["VapWasTaken", "DaInfLoop", "CosmicBear"].includes(socket.name)) return;
+    if(!["benjibogush", "benjibogush", "benjibogush"].includes(socket.name)) return;
     global.filteron = !global.filteron
   })
   socket.on('admin.announcement', (text) => {
-    if(!["VapWasTaken", "DaInfLoop", "CosmicBear"].includes(socket.name)) return;
+    if(!["benjibogush", "benjibogush", "benjibogush"].includes(socket.name)) return;
     global.announcement = text
     io.emit('admin.announcement', text)
   })
   socket.on('admin.kick', async (user, ack) => {
-    if(!["VapWasTaken", "DaInfLoop", "CosmicBear"].includes(socket.name)) return;
+    if(!["benjibogush", "benjibogush", "benjibogush"].includes(socket.name)) return;
     const s = await io.fetchSockets();
     s.forEach(so => {
       if (so.name.toLowerCase() == user) {
@@ -213,7 +213,7 @@ server.listen(3000, () => {
 });
 
 
-require('axios')("https://replchat.vapwastaken.repl.co")
+require('axios')("https://ChatApp.benjibogush.repl.co")
 
 process.on('unhandledRejection', (err) => {
   console.error(err)

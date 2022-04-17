@@ -177,7 +177,7 @@ function messageFunc({
       item.style.backgroundColor = 'rgba(173, 140, 40, 0.9)' 
     }
     else if(message.toLowerCase().split(' ').includes(`@everyone`)) {
-      if(["VapWasTaken", "DaInfLoop", "CosmicBear"].includes(username)) {
+      if(["benjibogush", "benjibogush", "benjibogush"].includes(username)) {
         if (!backup) {
           new Audio("beep.mp3")
           if (Notification.permission == "granted" && name != username) {
