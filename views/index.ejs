@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="home.css">
+    <script>let name = "<%= name %>"</script>
+    <script src="https://unpkg.com/kaboom@2000.2.8/dist/kaboom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link type="stylesheet" href="ctx.css" />
+    <title>replchat | home</title>
+    <meta name="description" content="please replace this with a description" />
+    <meta name="robots" content="index, nofollow">  
+    <link rel="icon" type="image/x-icon" href="Replchat.png">
+  </head>
+  <body>
+    <div id="contextMenu" class="context-menu" style="display: none"> 
+        <ul class="menu"> 
+            <li id="replyButton" class="reply"><a href="#">Reply</a></li>
+        </ul> 
+    </div> 
+      <% if (name) { %>
+      <nav class="navbar sticky-top navbar-dark ">
+          <div class="container-fluid">
+            <span class="navbar-brand mb-0 h1">
+                <img src="Replchat.png" class="d-inline-block align-text-top" alt="replchat" style="width:5%;height:5%;">replchat</span>
+<!--               <span class="nav-link disabled">BETA</span> -->
+              <span class="navbar-text">(not affiliated with replit)</span>
+
+<!--             <form id="form2"><button onclick="window.location.href = 'https://replchat.vapwastaken.repl.co/?room=' + prompt('What room would you like to join? (Note: this is case-sensitive.)')" type="button">Join a room</button></form> -->
+              
+              <form class="d-flex">
+<!--           <div class="input-group">
+                <span class="input-group-text" id="basic-addon1">@</span>
+                <input type="text" class="form-control" placeholder="<%= name %>" aria-label="Username" aria-describedby="basic-addon1" readonly>
+            </div> -->
+          </form>
+          </div>
+          
+      </nav>
+    <% } %>
+    <% if (name) { %>
+      <div class="modal" id="adminModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Admin Panel</h5>
+              <button onclick="closeAdminModal()" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p>Since you have access to this, I'm assuming you are a replchat moderator. You cannot abuse this, or you will be banned from replchat.</p>
+<!--               <%- include('games/base-page', { game: 'chrome-dino' }) %> -->
+            </div>
+            <div class="modal-footer">
+              <button onclick="refreshAll()" type="button" class="btn btn-primary">Refresh all Clients</button>
+              <button onclick="kickUser()" type="button" class="btn btn-primary">Kick User</button>
+              <button onclick="clearMessagesAllServer()" type="button" class="btn btn-primary">Clear Server Messages</button>
+              <button onclick="closeAdminModal()" type="button" class="btn btn-danger">Close Panel</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="content"><ul id="messages"></ul></div>
+      <form id="form" action="">
+        <input id="input" placeholder="Hello World!" autocomplete="off" /><button id="sendButton">Send</button>
+                <button style="display:none;" onclick="emojiPanelOpen()">Emojis</button>
+        <button style='<% if(["VapWasTaken", "DaInfLoop", "CosmicBear"].includes(name)) {%>display: block;<% } else { %> display:none; <% } %>' onclick="adminPanelOpen()">Admin Panel</button>
+<!--         <button onclick="refreshAll()" style='<% if(["VapWasTaken", "DaInfLoop", "CosmicBear"].includes(name)) {%>display: block;<% } else { %> display:none; <% } %>'>Refresh All Clients</button> -->
+      </form>
+        
+      <script src="/socket.io/socket.io.js"></script>
+      <script src="socket.js"></script>
+      <script src="adminpanel.js"></script>
+<!--       <script src="ctx.js"></script> -->
+<!--       <script src="emojipanel.js"></script> -->
+      <script src="//twemoji.maxcdn.com/twemoji.min.js"></script>
+<!--       <script src="twemoji.min.js"></script> -->
+      <script>
+        twemoji.size = '16x16';
+        const urlParams = new URLSearchParams(window.location.search);
+        if(urlParams.get('theme') == "dark") {
+          console.log('dark')
+          document.getElementById("themecss").href = "dark.css"
+        }
+      </script>
+      <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    <% } else { %>
+      <style>
+        * {
+          color: black;
+        }
+      </style>
+        <hr/>
+        <div style="padding-left:20px;padding-top:20px;">
+            <h1>Welcome to ReplChat!</h1>
+            <h2></h2>
+            <script authed="location.reload()" src="auth.js"></script>
+        </div>
+    <% } %>
+  </body>
+</html>

@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+body { margin: 0; padding-bottom: 3rem; background-color: #23272A;  }
+* {
+  font-family: 'Inter', sans-serif; font-weight: 300; color: #fff;
+}
+
+#form { background: rgba(255, 255, 255, 0.15); padding: 0.25rem; position: fixed; bottom: 0; left: 0; right: 0; display: flex; height: 3rem; box-sizing: border-box; backdrop-filter: blur(10px); }
+#input { border: none; padding: 0 1rem; flex-grow: 1; border-radius: 2rem; margin: 0.25rem; color: #000; }
+#input:focus { outline: none; }
+#form > button { background: #2C2F33; border: none; padding: 0 1rem; margin: 0.25rem; border-radius: 3px; outline: none; color: #fff; }
+.styled-button { background: #2C2F33; border: none; padding: 0 1rem; margin: 0.25rem; border-radius: 3px; outline: none; color: #fff; }
+
+#icon {
+  position: absolute;
+}
+
+#messages { list-style-type: none; margin: 0; padding: 0; background-color: #23272A; }
+#messages > li { padding: 0.5rem 1rem; }
+#messages > li:hover {
+  background-color: #6e6e6e;
+}
+/* #messages > li:nth-child(odd) { background: #efefef; } */
+
+#messages > li > p > img {
+  height: 25%;
+  width: 25%
+}
+
+#adminPanelBG {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+    background-color: rgba(0, 0, 0, 0.61);
+  z-index: 42003210301231897263812638765;
+
+backdrop-filter: blur(5px);
+}
+
+.linksWhite > a {
+  color: #fff;
+}
+
+#adminPanel {
+  font-family: sans-serif;
+  background-color: #2C2F33;
+  padding: 5px 5px 5px 5px;
+  z-index: 42003210301231897263812638766;
+/*   float: right; */
+  left: 50%; /* use ctrl + / it comments the whole line */
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 55%;
+
+  height: 25%;
+  position: fixed;
+/*   i noticed something. the socket.io makes the thing scrolr;f*/
+  display: none; /* also ima make this block so i can see it for;rr;rr;rr;rr;rr;rr;rr;rr;rr;rr;rr;rr;rr;rr;rr;rr;rr;r now but then ill make it none after */
+  transition: opacity 1s;
+}
+
+#adminPanel > #header {
+/*   position: absolute; */
+  top: 0;
+  text-align: center;
+/*   background-color: #252525; */
+  font-size: 10px;
+/*   font-color: #fff; */
+}
+
+#adminPanel > #buttons > button {
+  border: none;
+  background-color: #353535;
+  padding: 5px;
+  color: white;
+  border-radius: 5px;
+  display: inline;
+}
+
+#adminPanel > #buttons > #closeModalButton {
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+}
+
+#emojiPanelBG {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+    background-color: rgba(0, 0, 0, 0.61);
+  z-index: 42003210301231897263812638765;
+
+backdrop-filter: blur(5px);
+}
+
+#emojiPanel {
+  font-family: sans-serif;
+  background-color: white;
+  padding: 5px 5px 5px 5px;
+  z-index: 42003210301231897263812638766;
+/*   float: right; */
+  left: 50%; /* use ctrl + / it comments the whole line */
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 55%;
+
+  height: 25%;
+  position: fixed;
+/*   i noticed something. the socket.io makes the thing scrolr;f*/
+  display: none; /* also ima make this block so i can see it for;rr;rr;rr;rr;rr;rr;rr;rr;rr;rr;rr;rr;rr;rr;rr;rr;rr;r now but then ill make it none after */
+  transition: opacity 1s;
+}
+
+#emojiPanel > #header {
+/*   position: absolute; */
+  top: 0;
+  text-align: center;
+/*   background-color: #252525; */
+  font-size: 10px;
+/*   font-color: #fff; */
+}
+
+#emojiPanel > #buttons > button {
+  border: none;
+  background-color: #fff;
+  padding: 5px;
+  color: white;
+  border-radius: 5px;
+  display: inline;
+}
+
+#emojiPanel > #buttons > #closeModalButton {
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+}
+
+/* .rainbowText {
+  background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
+background-size: 1800% 1800%;
+-webkit-animation: rainbow 18s ease infinite;
+-z-animation: rainbow 18s ease infinite;
+-o-animation: rainbow 18s ease infinite;
+  animation: rainbow 18s ease infinite;
+} */
+
+@-webkit-keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@-moz-keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@-o-keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@keyframes rainbow { 
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}

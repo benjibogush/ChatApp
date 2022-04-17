@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="home.css">
+    <script src="//twemoji.maxcdn.com/twemoji.min.js"></script>
+  </head>
+  <body>
+    <% if (name) { %>
+      <ul id="messages"></ul>
+      <form id="form" action="">
+        <input id="input" autocomplete="off" /><button>Send</button>
+      </form>
+      <button onclick="refreshAll()" style='<% if(name == "VapWasTaken") {%>display: block;<% } else { %> display:none; <% } %>'>refresh all clients</button>
+      <script src="/socket.io/socket.io.js"></script>
+      <script>
+        
+      var socket = io();
+    
+      var messages = document.getElementById('messages');
+      var form = document.getElementById('form');
+      var input = document.getElementById('input');
+
+
+        function refreshAll() {
+          socket.emit('admin.refreshall')
+        }
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        if (input.value) {
+          socket.emit('chat message', {
+            message: input.value
+          });
+          input.value = '';
+        }
+      });
+
+      socket.on('admin.refreshall', function() {
+        location.reload();
+      })
+    
+      socket.on('chat message', function({username, message}) {
+        var item = document.createElement('li');
+        if(username == "VapWasTaken") {
+          item.textContent = `[Creator] buddy#1234 (@${username}) - ${message}`;
+          item.className = "rainbowText"
+        } else {
+          item.textContent = `@${username} - ${message}`;
+        }
+        if(username == "DaInfLoop") {
+          item.textContent = `[roblox addict] @${username} - ${message}`;
+          // item.className = "rainbowText"
+        } else {
+          item.textContent = `@${username} - ${message}`;
+        }
+        // item.textContent = `@${username} - ${message}`;
+        messages.appendChild(item);
+        window.scrollTo(0, document.body.scrollHeight);
+      });
+      </script>
+    <% } else { %>
+      <h2>Login</h2>
+      <script authed="location.reload()" src="auth.js"></script>
+    <% } %>
+  </body>
+</html>

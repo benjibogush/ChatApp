@@ -1,0 +1,340 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+ul {
+  list-style: none;
+}
+
+:root {
+      --background-root: #0E1525;
+    --background-default: #1C2333;
+    --background-higher: #2B3245;
+    --background-highest: #3C445C;
+    --background-overlay: #0e1525A0;
+    --foreground-default: #F5F9FC;
+    --foreground-dimmer: #C2C8CC;
+    --foreground-dimmest: #9DA2A6;
+    --outline-strongest: #9195A1;
+    --outline-stronger: #828899;
+    --outline-default: #70788C;
+    --outline-dimmer: #5F677A;
+    --outline-dimmest: #4E5569;
+    -webkit---accent-primary-dimmest: #004182;
+    --accent-primary-dimmest: #004182;
+    --accent-primary-dimmer: #0053A6;
+    -webkit---accent-primary-default: #0079F2;
+    --accent-primary-default: #0079F2;
+    --accent-primary-stronger: #57ABFF;
+    --accent-primary-strongest: #B2D9FF;
+    --accent-positive-dimmest: #044A10;
+    -webkit---accent-positive-dimmer: #046113;
+    --accent-positive-dimmer: #046113;
+    --accent-positive-default: #009118;
+    --accent-positive-stronger: #6CD97E;
+    --accent-positive-strongest: #BFFFCA;
+    --accent-negative-dimmest: #660000;
+    -webkit---accent-negative-dimmer: #A60808;
+    --accent-negative-dimmer: #A60808;
+    --accent-negative-default: #E52222;
+    --accent-negative-stronger: #FF6666;
+    --accent-negative-strongest: #FFCFCF;
+    --accent-red-dimmest: #660000;
+    --accent-red-dimmer: #A60808;
+    --accent-red-default: #E52222;
+    --accent-red-stronger: #FF6666;
+    --accent-red-strongest: #FFCFCF;
+    --accent-orange-dimmest: #542A00;
+    --accent-orange-dimmer: #703800;
+    --accent-orange-default: #AD5700;
+    -webkit---accent-orange-stronger: #D4781C;
+    --accent-orange-stronger: #D4781C;
+    --accent-orange-strongest: #FFBD7A;
+    --accent-yellow-dimmest: #4D4000;
+    --accent-yellow-dimmer: #635300;
+    --accent-yellow-default: #967D00;
+    -webkit---accent-yellow-stronger: #BFA730;
+    --accent-yellow-stronger: #BFA730;
+    --accent-yellow-strongest: #F2E088;
+    --accent-lime-dimmest: #314A00;
+    --accent-lime-dimmer: #3D5C00;
+    --accent-lime-default: #5A8700;
+    --accent-lime-stronger: #87B825;
+    --accent-lime-strongest: #C4E581;
+    --accent-green-dimmest: #044A10;
+    --accent-green-dimmer: #046113;
+    --accent-green-default: #009118;
+    --accent-green-stronger: #6CD97E;
+    -webkit---accent-green-strongest: #7AEB8D;
+    --accent-green-strongest: #7AEB8D;
+    --accent-teal-dimmest: #004452;
+    --accent-teal-dimmer: #006073;
+    --accent-teal-default: #0093B0;
+    --accent-teal-stronger: #27B9D6;
+    --accent-teal-strongest: #69D9F0;
+    --accent-blue-dimmest: #004182;
+    --accent-blue-dimmer: #0053A6;
+    --accent-blue-default: #0079F2;
+    --accent-blue-stronger: #57ABFF;
+    --accent-blue-strongest: #B2D9FF;
+    -webkit---accent-blurple-dimmest: #39298A;
+    --accent-blurple-dimmest: #39298A;
+    --accent-blurple-dimmer: #5239CC;
+    -webkit---accent-blurple-default: #795EFF;
+    --accent-blurple-default: #795EFF;
+    --accent-blurple-stronger: #A694FF;
+    --accent-blurple-strongest: #CEC4FF;
+    --accent-purple-dimmest: #582987;
+    --accent-purple-dimmer: #7633B8;
+    --accent-purple-default: #A64DFF;
+    -webkit---accent-purple-stronger: #C78FFF;
+    --accent-purple-stronger: #C78FFF;
+    --accent-purple-strongest: #E2C4FF;
+    -webkit---accent-magenta-dimmest: #6B1A6B;
+    --accent-magenta-dimmest: #6B1A6B;
+    --accent-magenta-dimmer: #8A218A;
+    -webkit---accent-magenta-default: #C73AC7;
+    --accent-magenta-default: #C73AC7;
+    --accent-magenta-stronger: #F562F5;
+    --accent-magenta-strongest: #FFBFFF;
+    --accent-pink-dimmest: #6E1B52;
+    --accent-pink-dimmer: #8F226B;
+    --accent-pink-default: #D4359F;
+    --accent-pink-stronger: #FF70CF;
+    --accent-pink-strongest: #FFBAE8;
+    --accent-grey-dimmest: #404040;
+    --accent-grey-dimmer: #545454;
+    --accent-grey-default: #808080;
+    --accent-grey-stronger: #A6A6A6;
+    --accent-grey-strongest: #D4D4D4;
+    --accent-brown-dimmest: #594031;
+    --accent-brown-dimmer: #75503B;
+    --accent-brown-default: #A3765C;
+    --accent-brown-stronger: #D49877;
+    -webkit---accent-brown-strongest: #FFC8A8;
+    --accent-brown-strongest: #FFC8A8;
+}
+
+body { margin: 0; padding-bottom: 3rem; background-color: var(--background-default);  }
+* {
+  font-family: 'Inter', sans-serif; font-weight: 300;
+  color: #fff;
+}
+
+nav {
+  background-color: var(--background-root)
+/*   backdrop-filter: blur(5px); */
+
+}
+
+#form { background: var(--background-root); padding: 0.25rem; position: fixed; bottom: 0; left: 0; right: 0; display: flex; height: 3rem; box-sizing: border-box; backdrop-filter: blur(10px); }
+#input { border: none; padding: 0 1rem; flex-grow: 1; border-radius: 2rem; margin: 0.25rem; background-color: var(--background-default); color: #fff; }
+#input:focus { outline: none; }
+#form > button { background: var(--background-default); border: none; padding: 0 1rem; margin: 0.25rem; border-radius: 3px; outline: none; color: #fff; }
+#form2 > button { background: var(--background-default); border: none; padding: 0 1rem; margin: 0.25rem; border-radius: 3px; outline: none; color: #fff; }
+
+#icon {
+  position: absolute;
+}
+
+#messages { list-style-type: none; margin: 0; padding: 0; background-color: var(--background-default); }
+#messages > li { padding: 0.5rem 1rem; }
+#messages > li:hover {
+  background-color: var(--background-higher);
+}
+/* #messages > li:nth-child(odd) { background: #efefef; } */
+
+#messages > li > p > img {
+  height: 25%;
+  width: 25%
+}
+
+#adminPanelBG {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+    background-color: rgba(0, 0, 0, 0.61);
+  z-index: 42003210301231897263812638765;
+
+backdrop-filter: blur(5px);
+}
+
+.linksWhite > a {
+  color: #fff;
+}
+
+#adminPanel {
+  font-family: sans-serif;
+  background-color: #2C2F33;
+  padding: 5px 5px 5px 5px;
+  z-index: 42003210301231897263812638766;
+/*   float: right; */
+  left: 50%; /* use ctrl + / it comments the whole line */
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 55%;
+
+  height: 25%;
+  position: fixed;
+/*   i noticed something. the socket.io makes the thing scrolr;f*/
+  display: none; /* also ima make this block so i can see it for;rr;rr;rr;rr;rr;rr;rr;rr;rr;rr;rr;rr;rr;rr;rr;rr;rr;r now but then ill make it none after */
+  transition: opacity 1s;
+}
+
+#adminPanel > #header {
+/*   position: absolute; */
+  top: 0;
+  text-align: center;
+/*   background-color: #252525; */
+  font-size: 10px;
+/*   font-color: #fff; */
+}
+
+#adminPanel > #buttons > button {
+  border: none;
+  background-color: #353535;
+  padding: 5px;
+  color: white;
+  border-radius: 5px;
+  display: inline;
+}
+
+#adminPanel > #buttons > #closeModalButton {
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+}
+
+#emojiPanelBG {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+    background-color: rgba(0, 0, 0, 0.61);
+  z-index: 42003210301231897263812638765;
+
+backdrop-filter: blur(5px);
+}
+
+#emojiPanel {
+  font-family: sans-serif;
+  background-color: white;
+  padding: 5px 5px 5px 5px;
+  z-index: 42003210301231897263812638766;
+/*   float: right; */
+  left: 50%; /* use ctrl + / it comments the whole line */
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 55%;
+
+  height: 25%;
+  position: fixed;
+/*   i noticed something. the socket.io makes the thing scrolr;f*/
+  display: none; /* also ima make this block so i can see it for;rr;rr;rr;rr;rr;rr;rr;rr;rr;rr;rr;rr;rr;rr;rr;rr;rr;r now but then ill make it none after */
+  transition: opacity 1s;
+}
+
+#emojiPanel > #header {
+/*   position: absolute; */
+  top: 0;
+  text-align: center;
+/*   background-color: #252525; */
+  font-size: 10px;
+/*   font-color: #fff; */
+}
+
+#emojiPanel > #buttons > button {
+  border: none;
+  background-color: #fff;
+  padding: 5px;
+  color: white;
+  border-radius: 5px;
+  display: inline;
+}
+
+#emojiPanel > #buttons > #closeModalButton {
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+}
+
+/* .rainbowText {
+  background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
+background-size: 1800% 1800%;
+-webkit-animation: rainbow 18s ease infinite;
+-z-animation: rainbow 18s ease infinite;
+-o-animation: rainbow 18s ease infinite;
+  animation: rainbow 18s ease infinite;
+} */
+
+@-webkit-keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@-moz-keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@-o-keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@keyframes rainbow { 
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+
+
+.context-menu { 
+  position: absolute; 
+} 
+.menu {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgb(64 64 64 / 5%);
+  padding: 10px 0;
+}
+.menu > li > a {
+  font: inherit;
+  border: 0;
+  padding: 10px 30px 10px 15px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+  text-decoration: unset;
+  color: #000;
+  font-weight: 500;
+  transition: 0.5s linear;
+  -webkit-transition: 0.5s linear;
+  -moz-transition: 0.5s linear;
+  -ms-transition: 0.5s linear;
+  -o-transition: 0.5s linear;
+}
+.menu > li > a:hover {
+  background:#f1f3f7;
+  color: #4b00ff;
+}
+.menu > li > a > i {
+  padding-right: 10px;
+}
+.menu > li.trash > a:hover {
+  color: red;
+}
+
+#adminModal {
+  position: fixed;
+}
+
+#adminModal * {
+  color: black;
+}
+
+#adminModal .modal-footer * {
+  color: white;
+}
